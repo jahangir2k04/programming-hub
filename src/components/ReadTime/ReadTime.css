@@ -5,6 +5,11 @@
     background: rgba(96, 71, 236, 0.1);
     border: 1px solid #6047EC;
     border-radius: 8px;
-    position: sticky;
-    top: 0;
+}
+
+@media only screen and (min-width: 760px) {
+    .read-time{
+        position: sticky;
+        top: 0;
+    }
 }

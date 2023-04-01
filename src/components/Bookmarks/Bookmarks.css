@@ -2,8 +2,6 @@
     background: rgba(17, 17, 17, 0.05);
     border-radius: 8px;
     padding: 30px;
-    position: sticky;
-    top: 100px;
 }
 .bookmarks-container h2{
     margin-top: 0px;
@@ -18,4 +16,12 @@
     font-size: 18px;
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 760px) {
+    .bookmarks-container{
+        position: sticky;
+        top: 100px;
+    }
+    
 }
