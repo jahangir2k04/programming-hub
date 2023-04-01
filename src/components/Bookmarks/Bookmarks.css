@@ -1,0 +1,17 @@
+.bookmarks-container{
+    background: rgba(17, 17, 17, 0.05);
+    border-radius: 8px;
+    padding: 30px;
+}
+.bookmarks-container h2{
+    margin-top: 0px;
+}
+.bookmarks-blog{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+.bookmarks-blog h4{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

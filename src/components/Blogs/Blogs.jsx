@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Blogs.css'
 import Blog from '../Blog/Blog';
 import ReadTime from '../ReadTime/ReadTime';
+import Bookmarks from '../Bookmarks/Bookmarks';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -25,6 +26,7 @@ const Blogs = () => {
             </div>
             <div className='bookmarks-blogs'>
                 <ReadTime></ReadTime>
+                <Bookmarks></Bookmarks>
             </div>
 
         </div>
