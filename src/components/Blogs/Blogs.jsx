@@ -25,7 +25,7 @@ const Blogs = () => {
             newBookmarks = [...bookmarks, title];
         }
         else{
-            toast("Wow so easy!");
+            toast.success("' Already added '");
             newBookmarks = [...bookmarks];
         }
         setBookmarks(newBookmarks);
@@ -54,7 +54,6 @@ const Blogs = () => {
                 <Bookmarks bookmarks={bookmarks}></Bookmarks>
                 <ToastContainer />
             </div>
-
         </div>
     );
 };
