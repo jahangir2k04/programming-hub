@@ -6,12 +6,19 @@ import Bookmarks from '../Bookmarks/Bookmarks';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
+    const [bookmarks, setBookmarks] = useState([]);
+
     useEffect( ()=>{
         fetch('blogs.json')
         .then(res => res.json())
         .then(data => setBlogs(data))
     }, [])
 
+    const addBookmarks = (blog) => {
+        const newBookmarks = [...bookmarks, blog];
+        console.log(newBookmarks);
+        setBookmarks(newBookmarks);
+    }
 
     return (
         <div className='blogs-container'>
@@ -21,12 +28,13 @@ const Blogs = () => {
                     blogs.map(blog => <Blog
                     key={blog.id}
                     blog={blog}
+                    addBookmarks={addBookmarks}
                     ></Blog>)
                 }
             </div>
             <div className='bookmarks-blogs'>
                 <ReadTime></ReadTime>
-                <Bookmarks></Bookmarks>
+                <Bookmarks bookmarks={bookmarks}></Bookmarks>
             </div>
 
         </div>
