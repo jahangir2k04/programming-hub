@@ -23,3 +23,15 @@
     align-items: center;
     gap: 50px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .header-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-top: 30px;
+    }
+    
+}

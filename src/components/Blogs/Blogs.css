@@ -7,3 +7,12 @@
     position: sticky;
     top: 0;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .blogs-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
