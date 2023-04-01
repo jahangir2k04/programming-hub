@@ -5,6 +5,7 @@ import './Blogs.css'
 import Blog from '../Blog/Blog';
 import ReadTime from '../ReadTime/ReadTime';
 import Bookmarks from '../Bookmarks/Bookmarks';
+import Question from '../Question/Question';
 
 
 const Blogs = () => {
@@ -37,24 +38,27 @@ const Blogs = () => {
     }
 
     return (
-        <div className='blogs-container'>
+        <>
+            <div className='blogs-container'>
 
-            <div className='blogs'>
-                {
-                    blogs.map(blog => <Blog
-                    key={blog.id}
-                    blog={blog}
-                    addBookmarks={addBookmarks}
-                    addToReadTime={addToReadTime}
-                    ></Blog>)
-                }
+                <div className='blogs'>
+                    {
+                        blogs.map(blog => <Blog
+                        key={blog.id}
+                        blog={blog}
+                        addBookmarks={addBookmarks}
+                        addToReadTime={addToReadTime}
+                        ></Blog>)
+                    }
+                </div>
+                <div className='bookmarks-blogs'>
+                    <ReadTime times={times}></ReadTime>
+                    <Bookmarks bookmarks={bookmarks}></Bookmarks>
+                    <ToastContainer />
+                </div>
             </div>
-            <div className='bookmarks-blogs'>
-                <ReadTime times={times}></ReadTime>
-                <Bookmarks bookmarks={bookmarks}></Bookmarks>
-                <ToastContainer />
-            </div>
-        </div>
+            <Question></Question>
+        </>
     );
 };
 
