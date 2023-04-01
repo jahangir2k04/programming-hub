@@ -15,7 +15,12 @@ const Blogs = () => {
         <div className='blogs-container'>
 
             <div className='blogs'>
-                <Blog></Blog>
+                {
+                    blogs.map(blog => <Blog
+                    key={blog.id}
+                    blog={blog}
+                    ></Blog>)
+                }
             </div>
             <div className='bookmarks-blogs'>
                 <h1>this is bookmarks container</h1>
