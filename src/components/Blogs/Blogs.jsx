@@ -7,6 +7,7 @@ import Bookmarks from '../Bookmarks/Bookmarks';
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [bookmarks, setBookmarks] = useState([]);
+    const [times, setTime] = useState([]);
 
     useEffect( ()=>{
         fetch('blogs.json')
@@ -14,10 +15,14 @@ const Blogs = () => {
         .then(data => setBlogs(data))
     }, [])
 
-    const addBookmarks = (blog) => {
-        const newBookmarks = [...bookmarks, blog];
-        console.log(newBookmarks);
+    const addBookmarks = (title) => {
+        const newBookmarks = [...bookmarks, title];
         setBookmarks(newBookmarks);
+    }
+
+    const addToReadTime = (readTime) => {
+        const newTime = [...times, readTime]
+        setTime(newTime);
     }
 
     return (
@@ -29,11 +34,12 @@ const Blogs = () => {
                     key={blog.id}
                     blog={blog}
                     addBookmarks={addBookmarks}
+                    addToReadTime={addToReadTime}
                     ></Blog>)
                 }
             </div>
             <div className='bookmarks-blogs'>
-                <ReadTime></ReadTime>
+                <ReadTime times={times}></ReadTime>
                 <Bookmarks bookmarks={bookmarks}></Bookmarks>
             </div>
 

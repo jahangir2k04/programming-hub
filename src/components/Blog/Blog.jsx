@@ -6,7 +6,7 @@ import './Blog.css';
 const Blog = (props) => {
     const {title, cover, name, image, publish, readTime} = props.blog;
     const addBookmarks = props.addBookmarks;
-   
+    const addToReadTime= props.addToReadTime;
 
     return (
         <div className='blog'>
@@ -20,13 +20,13 @@ const Blog = (props) => {
                     </div>
                 </div>
                 <p className='readTime'>{readTime} min read  
-                    <span  onClick={() => addBookmarks(props.blog)}>
+                    <span  onClick={() => addBookmarks(title)}>
                         <FontAwesomeIcon icon={faBookmark} />
                     </span>
                 </p>
             </div>
             <h3>{title}</h3>
-            <button className='btn-mark'>Mark as Read</button>
+            <button onClick={()=> addToReadTime(readTime)} className='btn-mark'>Mark as Read</button>
         </div>
     );
 };
