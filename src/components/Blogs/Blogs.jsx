@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Blogs.css'
 import Blog from '../Blog/Blog';
 import ReadTime from '../ReadTime/ReadTime';
 import Bookmarks from '../Bookmarks/Bookmarks';
+
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -16,7 +19,15 @@ const Blogs = () => {
     }, [])
 
     const addBookmarks = (title) => {
-        const newBookmarks = [...bookmarks, title];
+        let newBookmarks = [];
+        // const exists = bookmarks.find(ttl => ttl === title);
+        if(!bookmarks.includes(title)){
+            newBookmarks = [...bookmarks, title];
+        }
+        else{
+            toast("Wow so easy!");
+            newBookmarks = [...bookmarks];
+        }
         setBookmarks(newBookmarks);
     }
 
@@ -41,6 +52,7 @@ const Blogs = () => {
             <div className='bookmarks-blogs'>
                 <ReadTime times={times}></ReadTime>
                 <Bookmarks bookmarks={bookmarks}></Bookmarks>
+                <ToastContainer />
             </div>
 
         </div>
