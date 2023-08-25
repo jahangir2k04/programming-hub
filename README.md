@@ -7,4 +7,4 @@ This is my first react project.
 * JavaScript
 * React
 * React Toastify
-* Fort Awesome
+* Font Awesome
